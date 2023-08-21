@@ -19,7 +19,7 @@
   --app-padding-field-b: 15px 20px;
 
   --app-input-height: 40px;
-  --app-header-height: 60px;
+  --app-header-height: 65px;
   --app-input-padding: 2px 10px;
 
   --app-wrapper: 1450px;
@@ -28,8 +28,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
 input {
@@ -38,4 +38,9 @@ input {
 
 body {
   background: var(--app-background);
+}
+
+.wrapper {
+  margin: auto;
+  width: var(--app-wrapper);
 }

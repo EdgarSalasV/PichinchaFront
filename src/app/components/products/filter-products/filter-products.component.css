@@ -1,0 +1,6 @@
+.filter-products {
+  border-radius: 10px;
+  height: var(--app-input-height);
+  padding: var(--app-input-padding);
+  border: 1px solid var(--app-borders);
+}
