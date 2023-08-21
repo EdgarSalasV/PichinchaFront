@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --app-white: #ffffff;
+  --app-primary: #f8de4d;
+  --app-gray: #cacddd;
+
+  --app-error: #d33232;
+
+  --app-header-table: #e8ecf0;
+  --app-background: #f5f6fa;
+  --app-letters: #a5a5a5;
+  --app-borders: #cbcbcb;
+  --app-table-borders: #ebebeb;
+
+  --app-button-padding: 15px;
+
+  --app-padding-field-h: 15px 20px;
+  --app-padding-field-b: 15px 20px;
+
+  --app-input-height: 40px;
+  --app-header-height: 60px;
+  --app-input-padding: 2px 10px;
+
+  --app-wrapper: 1450px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+}
+
+body {
+  background: var(--app-background);
+}

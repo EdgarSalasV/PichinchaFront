@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  height: var(--app-header-height);
+  background: var(--app-white);
+}
+
+.navbar {
+  width: var(--app-wrapper);
+  height: var(--app-header-height);
+  
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  height: 40px;
+}

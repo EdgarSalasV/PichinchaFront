@@ -1,0 +1,8 @@
+.button {
+  border: none;
+  height: var(--app-input-height);
+  padding: 0px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: var(--app-primary);
+}
