@@ -9,19 +9,19 @@
       <th class="table-header__item"></th>
     </thead>
     <tbody class="table-body">
-      <app-item-table-products *ngFor="let index of [1,2,3]"></app-item-table-products>
+      <app-item-table-products *ngFor="let product of products" [product]="product"></app-item-table-products>
     </tbody>
   </table>
 
   <div class="table-footer">
-    <p class="table-fotter__total">15 Resultados</p>
+    <p class="table-fotter__total">{{ products.length }} Resultados</p>
     <div>
-      <select>
+      <select [value]="limit">
         <option value="5">5</option>
-        <option value="5">10</option>
-        <option value="5">25</option>
-        <option value="5">50</option>
-        <option value="5">100</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
       </select>
     </div>
   </div>

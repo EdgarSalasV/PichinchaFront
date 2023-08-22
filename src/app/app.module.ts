@@ -8,6 +8,8 @@ import { ComponentsModule } from './components/components.module';
 import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
 import { FormProductComponent } from './view/form-product/form-product.component';
 import { FinanceProductsComponent } from './view/finance-products/finance-products.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { InterceptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,16 @@ import { FinanceProductsComponent } from './view/finance-products/finance-produc
     BrowserModule,
     ComponentsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

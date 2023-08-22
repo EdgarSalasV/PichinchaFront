@@ -8,13 +8,10 @@
 .table-body-row .table-body-row__field .field__logo {
   width: 35px;
   height: 35px;
-  display: flex;
-  font-weight: bold;
-  align-items: center;
   border-radius: 100%;
-  color: var(--app-white);
   justify-content: center;
   background: var(--app-gray);
+  object-fit: cover;
 }
 
 .table-body-row .field__button {
@@ -37,6 +34,12 @@
 }
 
 .table-body-row .field__button-icon {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
   width: 15px;
   height: 15px;
 }
@@ -49,7 +52,7 @@
   position: absolute;
   z-index: 1;
   bottom: -70px;
-  left: 10px;
+  left: 0px;
   background: #FFFFFF;
   border: 1px solid #eaeaea;
 }
