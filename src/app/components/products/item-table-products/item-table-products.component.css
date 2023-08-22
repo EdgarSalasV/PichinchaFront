@@ -1,0 +1,91 @@
+
+.table-body-row .table-body-row__field {
+  text-align: left;
+  padding: var(--app-padding-field-b);
+  border-bottom: 1px solid var(--app-table-borders);
+}
+
+.table-body-row .table-body-row__field .field__logo {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  border-radius: 100%;
+  color: var(--app-white);
+  justify-content: center;
+  background: var(--app-gray);
+}
+
+.table-body-row .field__button {
+  position: relative;
+  padding: 5px;
+  width: 30px;
+  border-radius: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.table-body-row .field__button:hover {
+  background: #fafafa;
+}
+
+.table-body-row .field__button-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.field__container {
+  position: relative;
+}
+
+.field__options {
+  position: absolute;
+  z-index: 1;
+  bottom: -70px;
+  left: 10px;
+  background: #FFFFFF;
+  border: 1px solid #eaeaea;
+}
+
+.field__options ul  {
+  width: 100px;
+  list-style: none;
+}
+
+.field__options ul li button {
+  padding: 8px 10px;
+  display: block;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 13px;
+}
+
+.field__options ul li a {
+  padding: 8px 10px;
+  display: block;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+}
+
+.field__options ul li:hover {
+  background: #fafafa;
+}
+
+:host {
+  display: contents;
+}

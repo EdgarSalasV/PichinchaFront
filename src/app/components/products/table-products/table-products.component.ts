@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './table-products.component.html',
   styleUrls: ['./table-products.component.css']
 })
-export class TableProductsComponent {
+export class TableProductsComponent  {
 
+  ngOnInit() {
+  }
 }

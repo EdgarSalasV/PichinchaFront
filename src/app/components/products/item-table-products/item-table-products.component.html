@@ -1,0 +1,26 @@
+<tr class="table-body-row">
+  <td class="table-body-row__field">
+    <p class="field__logo">JG</p>
+  </td>
+  <td class="table-body-row__field">Platanos</td>
+  <td class="table-body-row__field">Los mejores de todo mexico</td>
+  <td class="table-body-row__field">18 de julio</td>
+  <td class="table-body-row__field">18 de julio 2024</td>
+  <td class="table-body-row__field">
+    <div class="field__container">
+      <button #toggleButton id="toggleButton" class="field__button" (click)="toggleMenu()">
+        <img class="field__button-icon" src="/assets/images/icons/icon-option.svg" />
+      </button>
+      <div #menu class="field__options" *ngIf="showOptions">
+        <ul>
+          <li>
+            <a routerLink="edit/1">Editar</a>
+          </li>
+          <li>
+            <button>Eliminar</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </td>
+</tr>

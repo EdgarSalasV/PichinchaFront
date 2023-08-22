@@ -7,6 +7,7 @@ import { TableProductsComponent } from './products/table-products/table-products
 import { LinkComponent } from './common/link/link.component';
 import { RouterModule } from '@angular/router';
 import { TextFieldComponent } from './common/text-field/text-field.component';
+import { ItemTableProductsComponent } from './products/item-table-products/item-table-products.component';
 
 
 
@@ -17,6 +18,7 @@ import { TextFieldComponent } from './common/text-field/text-field.component';
     FilterProductsComponent,
     TableProductsComponent,
     TextFieldComponent,
+    ItemTableProductsComponent,
   ],
   exports: [
     LinkComponent,
