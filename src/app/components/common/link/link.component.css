@@ -1,0 +1,14 @@
+.link {
+  border: none;
+  font-weight: bold;
+  padding: 0px 20px;
+  border-radius: 4px;
+  background: var(--app-primary);
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  height: var(--app-input-height);
+  cursor: pointer;
+  color: var(--app-letters);
+  text-decoration: none;
+}
