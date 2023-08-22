@@ -9,14 +9,14 @@
       <th class="table-header__item"></th>
     </thead>
     <tbody class="table-body">
-      <app-item-table-products *ngFor="let product of products" [product]="product"></app-item-table-products>
+      <app-item-table-products *ngFor="let product of productService.products" [product]="product"></app-item-table-products>
     </tbody>
   </table>
 
   <div class="table-footer">
-    <p class="table-fotter__total">{{ products.length }} Resultados</p>
+    <p class="table-fotter__total">{{ productService.products.length }} Resultados</p>
     <div>
-      <select [value]="limit">
+      <select [value]="productService.limit" (change)="selectedLimit($event)">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="25">25</option>

@@ -1,7 +1,7 @@
 import { Observable, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { Product } from '../interfaces/Product';
+import { iProduct } from '../interfaces/Product';
 
 const baseUrl =
   'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products';
@@ -12,8 +12,8 @@ const baseUrl =
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(baseUrl);
+  getAll(): Observable<iProduct[]> {
+    return this.http.get<iProduct[]>(baseUrl);
   }
 
   create(data: any): Observable<any> {

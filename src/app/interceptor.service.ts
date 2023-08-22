@@ -3,12 +3,10 @@ import {
   HttpInterceptor,
   HttpRequest,
   HttpHandler,
-  HttpEvent,
-  HttpErrorResponse,
-  HttpResponseBase,
+  HttpEvent
 } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 /**
  * Inlcudes all app global htttp-client intteceptions.
@@ -23,7 +21,6 @@ export class InterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     if (!this.isVerificationProduct(request)) {
-      console.log('request', request);
       const modifiedReq = request.clone({
         headers: request.headers.set('authorId', '1'),
       });

@@ -1,1 +1,5 @@
-<input placeholder="Buscar ..." class="filter-products"/>
+<input
+  class="filter-products"
+  placeholder="Buscar ..."
+  (input)="onSearchQueryInput($event)"
+/>

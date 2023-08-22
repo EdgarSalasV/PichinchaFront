@@ -6,7 +6,7 @@ import {
   ViewChildren,
   Input,
 } from '@angular/core';
-import { Product } from 'src/app/interfaces/Product';
+import { iProduct } from 'src/app/interfaces/Product';
 
 @Component({
   selector: 'app-item-table-products',
@@ -17,7 +17,7 @@ export class ItemTableProductsComponent {
   @ViewChildren('toggleButton') toggleButton?: ElementRef;
   @ViewChildren('menu') menu?: ElementRef;
 
-  @Input() product?: Product;
+  @Input() product?: iProduct;
 
   showOptions = false;
 
