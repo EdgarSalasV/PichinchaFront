@@ -1,0 +1,15 @@
+<div
+  class="input-group"
+  [class]="{
+    'input-group--error': !!control.errors && control.touched
+  }"
+>
+  <label class="input-group__label">{{ label }}</label>
+  <input
+    class="input-group__input"
+    [formControl]="control"
+    [type]="type"
+    required
+  />
+  <span class="input-group__error" *ngIf="!!control.errors && control.touched">{{ messageError }}</span>
+</div>

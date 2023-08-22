@@ -1,3 +1,56 @@
-<main>
-  <p>a</p>
-</main>
+<div id="container">
+  <form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <header>
+      <h1>Formulario de Registro</h1>
+    </header>
+    <hr />
+    <main>
+      <app-text-field
+        label="ID"
+        messageError="ID no válido"
+        [control]="getFormControl('id')"
+        [showError]="!!formGroup.get('id')?.errors"
+      ></app-text-field>
+
+      <app-text-field
+        label="Nombre"
+        messageError="Este campo es requerido!"
+        [control]="getFormControl('name')"
+        [showError]="!!formGroup.get('name')?.errors"
+      ></app-text-field>
+
+      <app-text-field
+        label="Descripción"
+        messageError="Este campo es requerido!"
+        [control]="getFormControl('description')"
+        [showError]="!!formGroup.get('description')?.errors"
+      ></app-text-field>
+
+      <app-text-field
+        label="Logo"
+        messageError="Este campo es requerido!"
+        [control]="getFormControl('logo')"
+        [showError]="!!formGroup.get('logo')?.errors"
+      ></app-text-field>
+
+      <app-text-field
+        label="Fecha Liberación"
+        type="date"
+        messageError="Este campo es requerido!"
+        [control]="getFormControl('dateLiberation')"
+        [showError]="!!formGroup.get('dateLiberation')?.errors"
+      ></app-text-field>
+
+      <app-text-field
+        label="Fecha Revisión"
+        messageError="Este campo es requerido!"
+        type="date"
+        [control]="getFormControl('dateRevision')"
+      ></app-text-field>
+    </main>
+    <footer>
+      <button class="restart" onclick="reset()">Reiniciar</button>
+      <button class="primary" type="submit" [disabled]="formGroup.invalid">Enviar</button>
+    </footer>
+  </form>
+</div>

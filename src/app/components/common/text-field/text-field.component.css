@@ -1,0 +1,44 @@
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  --color: rgba(0, 0, 0, 1);
+}
+
+.input-group.input-group--error {
+  --color: var(--app-error);
+}
+
+.input-group.input-group--disabled {
+  --color: var(--app-letters);
+}
+
+.input-group__input {
+  background: var(--app-background);
+}
+.input-group__label {
+  color: var(--app-letters);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input-group__label {
+  font-weight: bold;
+}
+
+.input-group__input {
+  font-size: 1.2rem;
+  border-radius: 0.25rem;
+  padding: 0.5em 0.75em 0.75em 0.75em;
+  width: 100%;
+  color: var(--color);
+  border: var(--color) 2px solid;
+  outline: var(--color);
+}
+
+.input-group__error {
+  color: var(--color);
+  font-weight: bold;
+}

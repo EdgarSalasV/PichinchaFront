@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -11,8 +12,10 @@ import { FinanceProductsComponent } from './view/finance-products/finance-produc
 @NgModule({
   declarations: [
     AppComponent,
+
     // Layout Components
     NavBarComponent,
+
     // View Components
     FormProductComponent,
     FinanceProductsComponent,
@@ -21,6 +24,7 @@ import { FinanceProductsComponent } from './view/finance-products/finance-produc
     BrowserModule,
     ComponentsModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
