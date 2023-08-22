@@ -26,7 +26,7 @@ export class ApiService {
 
   delete(id: any): Observable<any> {
     const params = new HttpParams().set('id', id);
-    return this.http.delete(`${baseUrl}/${id}`, { params });
+    return this.http.delete(baseUrl, { params });
   }
 
   existProduct(id: string, data: any): Observable<any> {

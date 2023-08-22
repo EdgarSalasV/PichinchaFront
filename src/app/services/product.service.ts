@@ -35,6 +35,14 @@ export class ProductService {
     return this.totalProducts.slice(0, this.limit);
   }
 
+  public deleteProduct(product: iProduct) {
+    this.apiService.delete(product.id)
+      .pipe(catchError(this.apiService.handleError))
+      .subscribe(() => {
+        this.getProducts();
+      });
+  }
+
   public changeLimit(value: number): void {
     this.limit = value;
 

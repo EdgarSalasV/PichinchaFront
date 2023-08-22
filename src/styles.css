@@ -44,3 +44,9 @@ body {
   margin: auto;
   width: var(--app-wrapper);
 }
+
+@media (max-width: 1450px) {
+  .wrapper {
+    width: 85%;
+  }
+}

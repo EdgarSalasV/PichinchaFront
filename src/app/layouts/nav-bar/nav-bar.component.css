@@ -5,10 +5,7 @@
 }
 
 .navbar {
-  width: var(--app-wrapper);
   height: var(--app-header-height);
-  
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
