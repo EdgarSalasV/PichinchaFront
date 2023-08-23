@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { of } from 'rxjs';
-import { Subject } from 'rxjs/internal/Subject';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { debounceTime, delay, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { ApiService } from 'src/app/services/api.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -16,6 +11,6 @@ export class FilterProductsComponent {
 
   public onSearchQueryInput(event: Event): void {
     const searchQuery = (event.target as HTMLInputElement).value;
-    this.productService.filterSubject.next(searchQuery?.trim());
+    this.productService.filterSubject.next(searchQuery);
   }
 }

@@ -1,28 +1,28 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TableProductsComponent } from './table-products.component';
+import { ItemTableProductsComponent } from './item-table-products.component';
 import { ProductService } from 'src/app/services/product.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('TableProductsComponent', () => {
-  let component: TableProductsComponent;
-  let fixture: ComponentFixture<TableProductsComponent>;
+describe('ItemTableProductsComponent', () => {
+  let component: ItemTableProductsComponent;
+  let fixture: ComponentFixture<ItemTableProductsComponent>;
   // let productService: ProductService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TableProductsComponent],
+      declarations: [ItemTableProductsComponent],
       providers: [ProductService],
       imports: [HttpClientTestingModule],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
-    fixture = TestBed.createComponent(TableProductsComponent);
+    fixture = TestBed.createComponent(ItemTableProductsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should have "getAll" function', () => {
-    expect(TableProductsComponent).toBeTruthy();
+    expect(ItemTableProductsComponent).toBeTruthy();
   });
 
   // it('should have getData function', () => {

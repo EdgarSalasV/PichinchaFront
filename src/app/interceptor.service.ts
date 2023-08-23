@@ -23,6 +23,7 @@ export class InterceptorService implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (this.isVerificationProduct(request)) return next.handle(request);
 
+    request.headers.set('authorId', '1')
     let temRequest: HttpRequest<any> = request.clone({
       headers: request.headers.set('authorId', '1'),
     });

@@ -9,8 +9,6 @@ import { RouterModule } from '@angular/router';
 import { TextFieldComponent } from './common/text-field/text-field.component';
 import { ItemTableProductsComponent } from './products/item-table-products/item-table-products.component';
 
-
-
 @NgModule({
   declarations: [
     LinkComponent,
@@ -27,10 +25,6 @@ import { ItemTableProductsComponent } from './products/item-table-products/item-
     TableProductsComponent,
     TextFieldComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule,
-  ]
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

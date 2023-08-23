@@ -18,4 +18,15 @@ describe('ButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should receive the title input', () => {
+    component.title = 'Enviar';
+
+    fixture.detectChanges();
+
+    const buttonComponent: HTMLElement =  fixture.debugElement.nativeElement;
+    const buttonContent = buttonComponent.querySelector('button')?.textContent;
+
+    expect(buttonContent?.trim()).toEqual(component.title);
+  })
 });

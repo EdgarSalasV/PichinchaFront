@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { Subject, catchError, debounce, debounceTime } from 'rxjs';
+import { Subject, catchError, debounce, debounceTime, filter, map } from 'rxjs';
 import { iProduct } from '../interfaces/Product';
 
 @Injectable({
@@ -11,21 +11,33 @@ export class ProductService {
   public products: iProduct[] = [];
   public limit = 5;
 
-  public filterSubject = new Subject();
+  public filterSubject = new Subject<string>();
 
   constructor(private apiService: ApiService) {
     this.filterSubject
-      .pipe(debounceTime(500))
+      .pipe(
+        map((value: string) => value.trim()),
+        filter((value: string) => {
+          if (value.length < 3) {
+            this.products = this.getProductsByLimit();
+            return false;
+          }
+          return true;
+        }),
+        filter((value: string) => value.length === 3),
+        debounceTime(300)
+      )
       .subscribe((value) => {
-        console.log('Debounce 500 ms executing ...')
+        console.log('Debounce 300 ms executing ...');
         this.filterProducts(value as string);
-      })
+      });
   }
 
   public getProducts(): void {
-    this.apiService.getAll()
+    this.apiService
+      .getAll()
       .pipe(catchError(this.apiService.handleError))
-      .subscribe(res => {
+      .subscribe((res) => {
         this.totalProducts = res;
         this.products = this.getProductsByLimit();
       });
@@ -36,7 +48,8 @@ export class ProductService {
   }
 
   public deleteProduct(product: iProduct) {
-    this.apiService.delete(product.id)
+    this.apiService
+      .delete(product.id)
       .pipe(catchError(this.apiService.handleError))
       .subscribe(() => {
         this.getProducts();
@@ -50,15 +63,11 @@ export class ProductService {
   }
 
   public filterProducts(value: string): void {
-    if (value === '') {
-      this.products = this.getProductsByLimit();
-      return;
-    }
-
     const productsToFilter = this.getProductsByLimit();
 
     this.products = productsToFilter.filter(({ name }) => {
-      return name.includes(value);
+      const re = new RegExp(value, 'i');
+      return name.match(re);
     });
   }
 }
