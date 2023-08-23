@@ -3,6 +3,13 @@
   text-align: left;
   padding: var(--app-padding-field-b);
   border-bottom: 1px solid var(--app-table-borders);
+  vertical-align: middle;
+}
+
+.table-body-row .table-body-row__field figure {
+  width: 35px;
+  height: 35px;
+  margin: 0px;
 }
 
 .table-body-row .table-body-row__field .field__logo {
@@ -33,15 +40,22 @@
   background: #fafafa;
 }
 
-.table-body-row .field__button-icon {
+.table-body-row .field__button-icon  {
   width: 30px;
   height: 30px;
   border: none;
   background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  width: 15px;
-  height: 15px;
+}
+
+.table-body-row .field__button-icon {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .field__container {

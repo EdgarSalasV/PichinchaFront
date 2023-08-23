@@ -28,6 +28,11 @@
   font-weight: bold;
 }
 
+.input-group_field-set {
+  border: none;
+  width: 100%;
+}
+
 .input-group__input {
   font-size: 1.2rem;
   border-radius: 0.25rem;
@@ -36,6 +41,11 @@
   color: var(--color);
   border: var(--color) 2px solid;
   outline: var(--color);
+}
+
+.input-group_field-set:disabled > .input-group__input {
+  background: var(--app-table-borders);
+  cursor: not-allowed;
 }
 
 .input-group__error {

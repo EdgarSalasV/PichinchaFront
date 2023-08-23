@@ -3,6 +3,7 @@
 :root {
   --app-white: #ffffff;
   --app-primary: #f8de4d;
+  --app-primary-hover: #ffd900;
   --app-gray: #cacddd;
 
   --app-error: #d33232;

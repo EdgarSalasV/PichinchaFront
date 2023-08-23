@@ -33,6 +33,24 @@ export class ProductService {
       });
   }
 
+  public updateProduct(product: iProduct): void {
+    this.apiService
+      .update(product)
+      .pipe(catchError(this.apiService.handleError))
+      .subscribe((res) => {
+        this.getProducts();
+      });
+  }
+
+  public createProduct(product: iProduct): void {
+    this.apiService
+      .create(product)
+      .pipe(catchError(this.apiService.handleError))
+      .subscribe((res) => {
+        this.getProducts();
+      });
+  }
+
   public getProducts(): void {
     this.apiService
       .getAll()

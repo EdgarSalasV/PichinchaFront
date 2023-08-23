@@ -1,14 +1,10 @@
 import { Observable, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpParams,
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { iProduct } from '../interfaces/Product';
-import { environment } from 'src/environments/environment';
 
-const baseUrl = environment.apiUrl;
+const baseUrl =
+  'https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/ipf-msa-productosfinancieros/bp/products';
 
 @Injectable({
   providedIn: 'root',
@@ -40,8 +36,6 @@ export class ApiService {
 
   handleError(error: HttpErrorResponse) {
     console.error(`Error ${error.status}`, error.error);
-    return throwError(
-      () => new Error('Algo malo ocurrio, intentalo más tarde')
-    );
+    return throwError(() => new Error('Algo malo ocurrio, intentalo más tarde'));
   }
 }

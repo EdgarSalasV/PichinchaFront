@@ -5,11 +5,13 @@
   }"
 >
   <label class="input-group__label">{{ label }}</label>
-  <input
-    class="input-group__input"
-    [formControl]="control"
-    [type]="type"
-    required
-  />
+  <fieldset [disabled]="disabled" class="input-group_field-set">
+    <input
+      class="input-group__input"
+      [formControl]="control"
+      [type]="type"
+      required
+    />
+  </fieldset>
   <span class="input-group__error" *ngIf="!!control.errors && control.touched">{{ messageError }}</span>
 </div>

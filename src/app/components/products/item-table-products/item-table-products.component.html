@@ -1,18 +1,36 @@
 <tr class="table-body-row">
   <td class="table-body-row__field">
-    <img class="field__logo" [src]="product?.logo" />
+    <figure>
+      <img class="field__logo" [src]="product?.logo" />
+    </figure>
   </td>
-  <td class="table-body-row__field">{{ product?.name }}</td>
-  <td class="table-body-row__field">{{ product?.description }}</td>
-  <td class="table-body-row__field">{{ product?.date_release | date }}</td>
-  <td class="table-body-row__field">{{ product?.date_revision | date }}</td>
   <td class="table-body-row__field">
-    <div class="field__container">
-      <img (click)="toggleMenu()" class="field__button-icon" src="/assets/images/icons/icon-option.svg" />
+    <p>{{ product?.name }}</p>
+  </td>
+  <td class="table-body-row__field">
+    <p>{{ product?.description }}</p>
+  </td>
+  <td class="table-body-row__field">
+    <p>{{ product?.date_release | date }}</p>
+  </td>
+  <td class="table-body-row__field">
+    <p>{{ product?.date_revision | date }}</p>
+  </td>
+  <td class="table-body-row__field">
+    <div class="field__container" #menu id="menu" >
+      <button
+        class="field__button"
+        (click)="toggleMenu()"
+      >
+        <img
+          class="field__button-icon"
+          src="/assets/images/icons/icon-option.svg"
+        />
+      </button>
       <div class="field__options" *ngIf="showOptions">
         <ul>
           <li>
-            <a routerLink="edit/1">Editar</a>
+            <a [routerLink]="editLink">Editar</a>
           </li>
           <li>
             <button (click)="deleteProduct()">Eliminar</button>

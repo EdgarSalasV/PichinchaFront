@@ -47,14 +47,13 @@ button {
   font-weight: bold;
   cursor: pointer;
   color: #363f54;
+  transition: all 0.2s ease-in-out;
 }
 
-button:disabled {
-  opacity: 0.8;
-  cursor: not-allowed;
-}
-button:hover {
-  opacity: 0.8;
+
+button.primary:hover {
+  background: var(--app-primary-hover);
+  box-shadow: 0 0 3px 2px #00000010;
 }
 
 button.primary {
@@ -63,6 +62,11 @@ button.primary {
 
 button.restart {
   background: #f3f3fb;
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
 }
 
 .input-group {

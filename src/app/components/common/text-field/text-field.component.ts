@@ -11,6 +11,7 @@ export class TextFieldComponent {
   @Input() showError = false;
   @Input() label = '';
   @Input() type = 'text';
+  @Input() disabled = false;
   
   @Input() control: FormControl = new FormControl();
 }

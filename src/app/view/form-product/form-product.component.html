@@ -7,6 +7,7 @@
     <main>
       <app-text-field
         label="ID"
+        [disabled]="idParam !== null"
         messageError="ID no válido"
         [control]="getFormControl('id')"
         [showError]="!!formGroup.get('id')?.errors"
@@ -14,21 +15,21 @@
 
       <app-text-field
         label="Nombre"
-        messageError="Este campo es requerido!"
+        messageError="¡Este campo es requerido!"
         [control]="getFormControl('name')"
         [showError]="!!formGroup.get('name')?.errors"
       ></app-text-field>
 
       <app-text-field
         label="Descripción"
-        messageError="Este campo es requerido!"
+        messageError="¡Este campo es requerido!"
         [control]="getFormControl('description')"
         [showError]="!!formGroup.get('description')?.errors"
       ></app-text-field>
 
       <app-text-field
         label="Logo"
-        messageError="Este campo es requerido!"
+        messageError="¡Este campo es requerido!"
         [control]="getFormControl('logo')"
         [showError]="!!formGroup.get('logo')?.errors"
       ></app-text-field>
@@ -36,21 +37,28 @@
       <app-text-field
         label="Fecha Liberación"
         type="date"
-        messageError="Este campo es requerido!"
+        messageError="¡La fecha de liberación debe ser como mínimo el día de hoy!"
         [control]="getFormControl('dateLiberation')"
         [showError]="!!formGroup.get('dateLiberation')?.errors"
       ></app-text-field>
 
       <app-text-field
         label="Fecha Revisión"
-        messageError="Este campo es requerido!"
+        messageError="¡Este campo es requerido!"
         type="date"
+        [disabled]="true"
         [control]="getFormControl('dateRevision')"
       ></app-text-field>
     </main>
     <footer>
-      <button class="restart" onclick="reset()">Reiniciar</button>
-      <button class="primary" type="submit" [disabled]="formGroup.invalid">Enviar</button>
+      <button class="restart" type="button" (click)="reset()">Reiniciar</button>
+      <button
+        class="primary"
+        type="submit"
+        [disabled]="formGroup.invalid"
+      >
+        Enviar
+      </button>
     </footer>
   </form>
 </div>
